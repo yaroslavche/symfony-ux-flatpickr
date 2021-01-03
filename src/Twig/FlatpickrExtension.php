@@ -27,11 +27,11 @@ class FlatpickrExtension extends AbstractExtension
     {
         $config = null !== $instance ? $instance->getConfig() : new Config();
         $configEncoded = base64_encode(json_encode($config));
-        return <<<INPUT
+        return <<<HTML
 <input
     data-controller="@yaroslavche/symfony-ux-flatpickr/flatpickr"
     data-config="{$configEncoded}"
 >
-INPUT;
+HTML;
     }
 }

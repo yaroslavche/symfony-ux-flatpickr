@@ -23,7 +23,10 @@ use Yaroslavche\Symfony\UX\Flatpickr\Builder\FlatpickrBuilderInterface;
 public function index(FlatpickrBuilderInterface $flatpickrBuilder): Response
 {
     $instance = $flatpickrBuilder->createFlatpickrInstance();
-    $instance->getConfig()->setDateFormat('d.m.Y');
+    $instance->getConfig()
+        ->setDateFormat('d.m.Y H:i')
+        ->setEnableTime(true)
+        ->setTime24hr(true);
     return $this->render('home/index.html.twig', [
         'instance' => $instance,
     ]);
