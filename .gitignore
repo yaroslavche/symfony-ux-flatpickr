@@ -1,0 +1,5 @@
+.idea
+vendor
+composer.lock
+src/Resources/assets/node_modules
+src/Resources/assets/yarn.lock

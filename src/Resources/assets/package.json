@@ -1,0 +1,32 @@
+{
+    "name": "@yaroslavche/symfony-ux-flatpickr",
+    "description": "Flatpickr integration for Symfony",
+    "license": "MIT",
+    "version": "0.0.1",
+    "symfony": {
+        "controllers": {
+            "flatpickr": {
+                "main": "dist/controller.js",
+                "webpackMode": "eager",
+                "enabled": true
+            }
+        }
+    },
+    "scripts": {
+        "build": "babel src -d dist"
+    },
+    "dependencies": {
+        "flatpickr": "^4.6.6"
+    },
+    "peerDependencies": {
+        "stimulus": "^2.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.12.3",
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
+        "@babel/preset-env": "^7.12.7",
+        "@symfony/stimulus-testing": "^1.1.0",
+        "stimulus": "^2.0.0"
+    }
+}
