@@ -868,9 +868,13 @@ class Config implements JsonSerializable
             'defaultDate' => $this->defaultDate,
             'defaultHour' => $this->defaultHour,
             'defaultMinute' => $this->defaultMinute,
-            'disable' => $this->disable,
+            'disable' => array_map(function (DateTimeInterface $datetime) {
+                return $datetime->format(DATE_ISO8601);
+            }, $this->disable),
             'disableMobile' => $this->disableMobile,
-            'enable' => $this->enable,
+            'enable' => array_map(function (DateTimeInterface $datetime) {
+                return $datetime->format(DATE_ISO8601);
+            }, $this->enable),
             'enableTime' => $this->enableTime,
             'enableSeconds' => $this->enableSeconds,
             //'formatDate' => ,
