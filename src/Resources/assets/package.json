@@ -17,7 +17,7 @@
     },
     "peerDependencies": {
         "stimulus": "^2.0.0",
-        "flatpickr": "^4.6.9"
+        "flatpickr": "^4.6.6"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.1",
@@ -26,6 +26,6 @@
         "@babel/preset-env": "^7.12.7",
         "@symfony/stimulus-testing": "^1.1.0",
         "stimulus": "^2.0.0",
-        "flatpickr": "^4.6.9"
+        "flatpickr": "^4.6.6"
     }
 }

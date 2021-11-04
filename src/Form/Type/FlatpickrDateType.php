@@ -18,7 +18,7 @@ class FlatpickrDateType extends AbstractType
             ->setEnableTime(false);
         $builder
             ->add('value', TextType::class, ['label' => false, 'attr' => [
-                'data-controller' => '@yaroslavche/symfony-ux-flatpickr/flatpickr',
+                'data-controller' => 'yaroslavche--symfony-ux-flatpickr--flatpickr',
                 'data-config' => base64_encode(json_encode($config)),
             ]]);
     }
