@@ -33,3 +33,25 @@ class SomeController extends AbstractController
     }
 }
 ```
+
+## Installation without recipe
+```json5
+  # assets/controllers.json
+  "controllers": {
+        "@yaroslavche/symfony-ux-flatpickr": {
+            "flatpickr": {
+                "enabled": true,
+                "webpackMode": "eager"
+            }
+        }
+    },
+```
+
+```json5
+# package.json
+"devDependencies": {
+  # ...
+  "@yaroslavche/symfony-ux-flatpickr": "file:vendor/yaroslavche/symfony-ux-flatpickr/src/Resources/assets",
+  "flatpickr": "^4.6.9"          
+}
+```
