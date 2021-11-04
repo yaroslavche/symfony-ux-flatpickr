@@ -9,8 +9,6 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Yaroslavche\Symfony\UX\Flatpickr\Builder\FlatpickrBuilder;
 use Yaroslavche\Symfony\UX\Flatpickr\Builder\FlatpickrBuilderInterface;
-use Yaroslavche\Symfony\UX\Flatpickr\Twig\FlatpickrExtension as TwigExtension;
-use Twig\Environment;
 
 /**
  * Class FlatpickrExtension
@@ -26,11 +24,5 @@ class FlatpickrExtension extends Extension
         $container
             ->setAlias(FlatpickrBuilderInterface::class, 'flatpickr.builder')
             ->setPublic(false);
-        if (class_exists(Environment::class)) {
-            $container
-                ->setDefinition('flatpickr.twig_extension', new Definition(TwigExtension::class))
-                ->addTag('twig.extension')
-                ->setPublic(false);
-        }
     }
 }

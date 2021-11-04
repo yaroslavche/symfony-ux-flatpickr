@@ -14,5 +14,6 @@ use Yaroslavche\Symfony\UX\Flatpickr\Model\Instance;
 interface FlatpickrBuilderInterface
 {
     public function createFlatpickrInstance(): Instance;
+
     public function createFlatpickrConfig(): Config;
 }

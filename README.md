@@ -4,31 +4,32 @@ $ yarn install --force
 $ yarn encore dev
 ```
 
-```html
-# template.html.twig
-{{ flatpickr() }}
-{{ flatpickr(instance) }}
-```
-
 ```php
 # src/Controller/SomeController.php
+# ...
+use Yaroslavche\Symfony\UX\Flatpickr\Form\Type\FlatpickrDateTimeType;
+use Yaroslavche\Symfony\UX\Flatpickr\Form\Type\FlatpickrDateType;
 
-use Yaroslavche\Symfony\UX\Flatpickr\Builder\FlatpickrBuilderInterface;
-
-/**
- * @Route("/", name="home")
- * @param FlatpickrBuilderInterface $flatpickrBuilder
- * @return Response
- */
-public function index(FlatpickrBuilderInterface $flatpickrBuilder): Response
+class SomeController extends AbstractController
 {
-    $instance = $flatpickrBuilder->createFlatpickrInstance();
-    $instance->getConfig()
-        ->setDateFormat('d.m.Y H:i')
-        ->setEnableTime(true)
-        ->setTime24hr(true);
-    return $this->render('home/index.html.twig', [
-        'instance' => $instance,
-    ]);
+    /**
+     * @Route("/", name="home")
+     * @param Request $request
+     * @return Response
+     */
+    public function index(Request $request): Response
+    {
+        $form = $this->createFormBuilder()
+            ->add('date', FlatpickrDateType::class)
+            ->add('datetime', FlatpickrDateTimeType::class)
+            ->add('send', SubmitType::class)
+            ->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            dd($data);
+        }
+        return $this->renderForm('template.html.twig', ['form' => $form]);
+    }
 }
 ```
