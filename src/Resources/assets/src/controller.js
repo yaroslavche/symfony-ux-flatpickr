@@ -10,4 +10,3 @@ class StimulusFlatpickr extends Controller {
         this.fp = flatpickr(this.element, config);
     }
 }
-export default StimulusFlatpickr

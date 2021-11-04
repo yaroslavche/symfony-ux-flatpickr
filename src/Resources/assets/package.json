@@ -2,7 +2,7 @@
     "name": "@yaroslavche/symfony-ux-flatpickr",
     "description": "Flatpickr integration for Symfony",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "symfony": {
         "controllers": {
             "flatpickr": {
