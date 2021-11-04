@@ -41,7 +41,7 @@ class SomeController extends AbstractController
         "@yaroslavche/symfony-ux-flatpickr": {
             "flatpickr": {
                 "enabled": true,
-                "webpackMode": "eager"
+                "fetch": "eager"
             }
         }
     },
@@ -52,6 +52,13 @@ class SomeController extends AbstractController
 "devDependencies": {
   # ...
   "@yaroslavche/symfony-ux-flatpickr": "file:vendor/yaroslavche/symfony-ux-flatpickr/src/Resources/assets",
-  "flatpickr": "^4.6.9"          
+  "flatpickr": "^4.6.6"          
 }
 ```
+
+Make sure, that you have in `package.json`
+```
+"@symfony/stimulus-bridge": "^2.0.0",
+"@symfony/webpack-encore": "^1.0.0",
+```
+[Upgrading to stimulus-bridge 2.0](https://symfony.com/blog/webpack-encore-1-0-and-stimulus-bridge-2-0-released#upgrading-to-stimulus-bridge-2-0)
