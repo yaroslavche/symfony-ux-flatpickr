@@ -2,6 +2,11 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
 var _stimulus = require("stimulus");
 
 var _flatpickr = _interopRequireDefault(require("flatpickr"));
@@ -22,32 +27,34 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var StimulusFlatpickr = /*#__PURE__*/function (_Controller) {
-  _inherits(StimulusFlatpickr, _Controller);
+var _default = /*#__PURE__*/function (_Controller) {
+  _inherits(_default, _Controller);
 
-  var _super = _createSuper(StimulusFlatpickr);
+  var _super = _createSuper(_default);
 
-  function StimulusFlatpickr() {
-    _classCallCheck(this, StimulusFlatpickr);
+  function _default() {
+    _classCallCheck(this, _default);
 
     return _super.apply(this, arguments);
   }
 
-  _createClass(StimulusFlatpickr, [{
+  _createClass(_default, [{
     key: "connect",
     value: function connect() {
       var config = JSON.parse(atob(this.element.getAttribute('data-config')));
-      (0, _flatpickr["default"])(this.element, config);
+      this.fp = (0, _flatpickr["default"])(this.element, config);
     }
   }]);
 
-  return StimulusFlatpickr;
+  return _default;
 }(_stimulus.Controller);
+
+exports["default"] = _default;
