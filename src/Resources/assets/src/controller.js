@@ -1,6 +1,6 @@
 'use strict';
 
-import { Controller } from 'stimulus';
+import { Controller } from '@hotwired/stimulus';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 

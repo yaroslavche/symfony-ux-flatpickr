@@ -52,13 +52,13 @@ class SomeController extends AbstractController
 "devDependencies": {
   # ...
   "@yaroslavche/symfony-ux-flatpickr": "file:vendor/yaroslavche/symfony-ux-flatpickr/src/Resources/assets",
-  "flatpickr": "^4.6.6"          
+  "flatpickr": "^4.6.13"          
 }
 ```
 
 Make sure, that you have in `package.json`
 ```
-"@symfony/stimulus-bridge": "^2.0.0",
-"@symfony/webpack-encore": "^1.0.0",
+"@symfony/stimulus-bridge": "^3.2.2",
+"@symfony/webpack-encore": "^4.0.0",
 ```
 [Upgrading to stimulus-bridge 2.0](https://symfony.com/blog/webpack-encore-1-0-and-stimulus-bridge-2-0-released#upgrading-to-stimulus-bridge-2-0)
